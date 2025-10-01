@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body{
-    background-color: #121212;
-
+    background-color: #1e1e1e;
 
 
 
@@ -17,4 +16,28 @@ body{
     padding: 20px;
     margin-top: 130px;
 
+}
+.menu{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+}
+.menu-logo{
+    width:70px;
+    height:70px;
+    background-color:#212121;
+    border-radius: 15px;
+    background-image: url('media/grass_block.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 10px #282828;
+    transition: all 0.3s ease;
+}
+.menu-logo:hover{
+    box-shadow: 0 0 20px #3f553a;
+    cursor: pointer;
+    transform:scale(1.1);
+    transition: all 0.3s ease;
+    transform:translateY(-5px);
 }
