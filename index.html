@@ -1,45 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <link rel="stylesheet" href="shady.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shady Shade's Main Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamburger Menu - klik poza zamyka</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Pasek nawigacji */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .navbar h1 {
+      font-size: 20px;
+    }
+
+    /* Ikona hamburgera */
+    
+
+    /* Menu boczne */
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -250px; /* schowane */
+      width: 250px;
+      height: 100%;
+      background: #444;
+      padding-top: 60px;
+      transition: 0.3s;
+      z-index: 1000;
+    }
+
+    .menu.active {
+      left: 0;
+    }
+
+    .menu a {
+      display: block;
+      padding: 15px;
+      color: white;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .menu a:hover {
+      background: #666;
+    }
+
+    /* Overlay (tło do kliknięcia poza menu) */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      display: none;
+      z-index: 999;
+    }
+
+    .overlay.active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    <div class="logo">
-        Shady Shade 74
-    </div>
-    <div class="squares-container">
-        <a href="#">
-            <div class="square" id="yt">
-                <div class="square-text">
-                    My Youtube
-                </div>
-            </div>
-        </a>
-        <a href="pages/superflat.html">
-            <div class="square" id="superflat">
-                <div class="square-text">
-                    Superflat
-                </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="square" id="about">
-                <div class="square-text">
-                    About
-                </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="square" id="contact">
-                <div class="square-text">
-                    Contact
-                </div>
-            </div>
-        </a>
 
+  <div class="navbar">
+    <h1>Moja Strona</h1>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+  </div>
+
+  <!-- Menu -->
+  <div class="menu" id="menu">
+    <a href="pages/superflat.html">Superflat/a>
+    <a href="#">O nas</a>
+    <a href="#">Usługi</a>
+    <a href="#">Kontakt</a>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
+    const overlay = document.getElementById("overlay");
+
+    hamburger.addEventListener("click", () => {
+      menu.classList.add("active");
+      overlay.classList.add("active");
+    });
+
+    overlay.addEventListener("click", () => {
+      menu.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+  </script>
+
 </body>
 </html>
