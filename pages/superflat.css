@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body{
+    background-color: #121212;
+
+
+
+
+}
+.logo{
+    font-family:'Press Start 2P', cursive;
+    font-size:80px;
+    background:linear-gradient(180deg, #3be615, #896510,#997112);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 130px;
+
+}
