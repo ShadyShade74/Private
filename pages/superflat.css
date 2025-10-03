@@ -46,3 +46,42 @@ a{
     text-decoration:none;
     color:#000;
 }
+
+
+
+.menu-toggle {
+      background: #333;
+      color: white;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Ukryte menu */
+    .dropdown {
+      background: #444;
+      width: 200px;
+      margin-top: 5px;
+      border-radius: 5px;
+      overflow: hidden;
+      max-height: 0; /* menu zamknięte */
+      transition: max-height 0.3s ease;
+    }
+
+    /* Menu aktywne (rozwinięte) */
+    .dropdown.active {
+      max-height: 500px; /* wystarczająco duże, żeby się rozwinęło */
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 12px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .dropdown a:hover {
+      background: #666;
+    }
